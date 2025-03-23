@@ -1,5 +1,7 @@
+import { redirect } from 'next/navigation'
+
 const Home = () => {
-  return <div>Home</div>
+  redirect('/use-effect')
 }
 
 export default Home
