@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
@@ -8,7 +6,7 @@ import Wrapper from '@/components/wrapper'
 import Loading from '@/components/loading'
 import Card, { TCard } from '@/components/card'
 
-const UseEffect = () => {
+const UseEffectPage = () => {
   const [data, setData] = useState<TCard[]>([])
 
   const fetchData = async () => {
@@ -43,4 +41,4 @@ const UseEffect = () => {
   )
 }
 
-export default UseEffect
+export default UseEffectPage

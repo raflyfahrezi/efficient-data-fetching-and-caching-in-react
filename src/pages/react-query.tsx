@@ -1,5 +1,3 @@
-'use client'
-
 import { useQuery } from '@tanstack/react-query'
 
 import { axiosInstance } from '@/utils'
@@ -7,9 +5,9 @@ import Wrapper from '@/components/wrapper'
 import Loading from '@/components/loading'
 import Card, { TCard } from '@/components/card'
 
-const ReactQuery = () => {
+const ReactQueryPage = () => {
   const { data, isLoading, refetch } = useQuery({
-    queryKey: ['users'],
+    queryKey: ['users', 'react-query'],
     queryFn: () => axiosInstance.get('/users?flag=react-query'),
   })
 
@@ -35,4 +33,4 @@ const ReactQuery = () => {
   )
 }
 
-export default ReactQuery
+export default ReactQueryPage
