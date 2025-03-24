@@ -3,7 +3,9 @@ import { Html, Head, Main, NextScript } from 'next/document'
 const Document = () => {
   return (
     <Html lang='en'>
-      <Head title='Efficient API Data Fetching' />
+      <Head>
+        <title>Efficient Data Fetching</title>
+      </Head>
       <body>
         <Main />
         <NextScript />
