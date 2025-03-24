@@ -1,9 +1,10 @@
 import useSWR from 'swr'
+import Link from 'next/link'
 
 import { fetcher } from '@/utils'
-import Card, { TCard } from '@/components/card'
 import Wrapper from '@/components/wrapper'
 import Loading from '@/components/loading'
+import Card, { TCard } from '@/components/card'
 
 const SWRPage = () => {
   const { data, isLoading, mutate } = useSWR('/users?flag=swr', fetcher)
@@ -19,13 +20,13 @@ const SWRPage = () => {
       >
         Fetch Data
       </button>
-      {data && (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-          {data.map((user: TCard) => (
-            <Card key={user.id} card={user} />
-          ))}
-        </div>
-      )}
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+        {data.map((card: TCard) => (
+          <Link href={`/users/${card.id}`} key={card.id}>
+            <Card card={card} />
+          </Link>
+        ))}
+      </div>
     </Wrapper>
   )
 }
