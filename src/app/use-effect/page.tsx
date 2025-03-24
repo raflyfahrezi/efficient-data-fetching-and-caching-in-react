@@ -12,7 +12,7 @@ const UseEffect = () => {
   const [data, setData] = useState<TCard[]>([])
 
   const fetchData = async () => {
-    const res = await axiosInstance.get('/users')
+    const res = await axiosInstance.get('/users?flag=use-effect')
 
     setData(res.data)
   }

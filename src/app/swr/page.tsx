@@ -8,7 +8,7 @@ import Wrapper from '@/components/wrapper'
 import Loading from '@/components/loading'
 
 const SWRPage = () => {
-  const { data, isLoading, mutate } = useSWR('/users', fetcher)
+  const { data, isLoading, mutate } = useSWR('/users?flag=swr', fetcher)
 
   if (isLoading) return <Loading />
 

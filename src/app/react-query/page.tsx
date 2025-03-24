@@ -10,7 +10,7 @@ import Card, { TCard } from '@/components/card'
 const ReactQuery = () => {
   const { data, isLoading, refetch } = useQuery({
     queryKey: ['users'],
-    queryFn: () => axiosInstance.get('/users'),
+    queryFn: () => axiosInstance.get('/users?flag=react-query'),
   })
 
   if (isLoading) return <Loading />
